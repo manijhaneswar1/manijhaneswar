@@ -46,7 +46,7 @@ const About = () => {
           <div className="relative flex items-center justify-center">
               {/* Pencil Sketch Image */}
               <img
-                  src="../../public/pencil_design.jpg"
+                  src="../../public/pencil_design.webp"
                   alt="pencil"
                   className="w-72 h-72"
               />
@@ -65,7 +65,7 @@ const About = () => {
           {/* About Section */}
           <div
               className="flex flex-col items-center text-center sm:flex-row sm:justify-between px-6 md:px-16 lg:px-24 space-y-8 sm:space-y-0">
-              <img src="/portfolio_img.png" alt="hero" className="w-44 h-44 md:w-72 md:h-72 sm:mr-6"/>
+              <img src="/portfolio_img.webp" alt="hero" className="w-44 h-44 md:w-72 md:h-72 sm:mr-6"/>
 
               <div className="px-6 md:px-16">
                   <h3 className="text-xs md:text-sm font-semibold uppercase tracking-wider">ABOUT :</h3>
@@ -77,36 +77,44 @@ const About = () => {
           </div>
 
           {/* Get to Know Me Section */}
-          <div className="px-6 md:px-16 lg:px-40 min-h-screen flex flex-col justify-center lg:mt-20">
+          <div className="min-h-screen flex flex-col justify-center lg:mt-20">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-mono text-center mb-10 md:mb-12">GET TO KNOW ME</h1>
-              <div className="px-8 xl:px-44 space-y-8 text-sm sm:text-xl lg:text-2xl leading-loose">
-                  <p>I'm a people-person, meaning I focus on connection and actually prefer working in group settings
-                      (shocker).</p>
-                  <p>You'd never know the mental friction, the internal buzz, when a problem locks me in,
-                      because the chase for the solution takes over.</p>
-                  <p>When not in the office, you can usually find me in the gym, watching movies, or solving leetcode Problems.</p>
+              <div className="flex items-center justify-center ">
+                  <div
+                      className=" max-w-xs sm:max-w-xl md:max-w-2xl lg:max-w-3xl space-y-8 text-sm sm:text-xl lg:text-2xl leading-loose text-start px-2.5">
+                      <p>I'm a people-person, meaning I focus on connection and actually prefer working in group
+                          settings (shocker).</p>
+                      <p>You'd never know the mental friction, the internal buzz, when a problem locks me in, because
+                          the chase for the solution takes over.</p>
+                      <p>When not in the office, you can usually find me in the gym, watching movies, or solving
+                          LeetCode problems.</p>
+                  </div>
               </div>
+
           </div>
 
           {/* Experience Section */}
-          <div className="px-6 md:px-16 lg:px-40 min-h-screen pb-10">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-mono text-center mb-10 md:mb-14">Experience</h1>
-              <div className="lg:px-20">
-                  {ExperienceData.map((item, index) => (
-                      <div key={index}
-                           className="px-8 md:px-24 lg:px-28 text-start mb-6 md:mb-8 leading-loose text-sm sm:text-xl lg:text-2xl">
-                          <h1 className="font-sans text-lg lg:text-xl mb-2 text-gray-300">{item.title}</h1>
-                          <p>{item.role1}</p>
-                          <p>{item.role2}</p>
-                      </div>
-                  ))}
+          <div className="h-auto flex flex-col justify-center lg:mt-6">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-mono text-center mb-10 md:mb-12">Experience</h1>
+              <div className="flex items-center justify-center">
+                  <div
+                      className=" max-w-xs sm:max-w-xl md:max-w-2xl lg:max-w-3xl space-y-8 text-sm sm:text-xl lg:text-2xl leading-loose text-start px-2.5">
+                      {ExperienceData.map((item, index) => (
+                          <div key={index}
+                               className=" text-start mb-6 md:mb-8 leading-loose text-sm sm:text-xl lg:text-2xl">
+                              <h1 className="font-sans text-lg lg:text-xl mb-2 text-gray-300">{item.title}</h1>
+                              <p>{item.role1}</p>
+                              <p>{item.role2}</p>
+                          </div>
+                      ))}
+                  </div>
               </div>
           </div>
 
           {/* Skills Section */}
-          <div className="px-6 md:px-16 lg:px-40 min-h-screen mb-14 lg:mb-0">
+          <div className=" min-h-screen mt-14 sm:mt-16 md:mt-20">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-mono text-center mb-10 md:mb-12">Skills</h1>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-center">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-center px-2.5">
                   {SkillsData.map((skill, index) => (
                       <div key={index} className="flex flex-col items-center space-y-2 p-4">
                           <div className="text-4xl text-blue-400">{skill.icon}</div>
@@ -117,7 +125,7 @@ const About = () => {
           </div>
 
           {/* Contact Section */}
-          <div className="px-6 md:px-16 lg:px-40">
+          <div className="px-6 md:px-16 lg:px-40 mt-14 sm:mt-16 ">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-mono text-center mb-10 md:mb-12">Call Me, Beep
                   Me</h1>
               {callData.map((item, index) => (
@@ -136,7 +144,7 @@ const About = () => {
 
           {/* Signature Section (Smaller on Mobile) */}
           <div className="flex items-center justify-center py-8 md:py-12">
-              <img src="/Digital_Signature-Photoroom.jpg" alt="sign" className="rounded h-16 sm:h-24 md:h-32 lg:h-40"/>
+              <img src="/Digital_Signature-Photoroom.webp" alt="sign" className="rounded h-16 sm:h-24 md:h-32 lg:h-40"/>
           </div>
 
       </div>
