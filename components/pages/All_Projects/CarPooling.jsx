@@ -9,7 +9,8 @@ const carPooling = ()=>{
           "myRole": "I worked as the Frontend Engineer for this four-month-long project as part of my End Semester Project."
         },
         {
-
+            image : "../../../public/project_images/car_mock.png",
+            website : "/",
         },
     ]
     return(
@@ -19,6 +20,8 @@ const carPooling = ()=>{
                 description = {AllData[0].description}
                 description2 = {AllData[0].description2}
                 myRole = {AllData[0].myRole}
+                image = {AllData[1].image}
+                website = {AllData[1].website}
             />
         </>
     )
