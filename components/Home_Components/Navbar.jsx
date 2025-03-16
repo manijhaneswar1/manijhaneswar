@@ -26,9 +26,9 @@ const Navbar = () => {
 
             {/* Navigation Links (Right) */}
             <div className="flex items-center justify-center gap-5 font-medium text-lg">
-                <Link to="/" className="hover:border-b-2 border-white">Home</Link>
-                <Link to="/about" className="hover:border-b-2 border-white">About</Link>
-                <Link to={`/${projectLink}`} className="hover:border-b-2 border-white" onClick={handleProjectClick}>
+                <Link to="/" className="hover:border-t-2 border-white">Home</Link>
+                <Link to="/about" className="hover:border-t-2 border-white">About</Link>
+                <Link to={`/${projectLink}`} className="hover:border-t-2 border-white" onClick={handleProjectClick}>
                     Random Project
                 </Link>
             </div>
