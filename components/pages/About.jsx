@@ -3,6 +3,7 @@ import { Button } from "../../utils/icons.jsx";
 import { FaDatabase, FaGithub, FaGitAlt, FaJava, FaJs, FaCode, FaReact, FaMobileAlt } from "react-icons/fa";
 import { MdIntegrationInstructions } from "react-icons/md";
 import { AiOutlineBulb } from "react-icons/ai";
+import { motion } from "framer-motion"
 const About = () => {
   const ExperienceData = [
     {
@@ -21,16 +22,16 @@ const About = () => {
   ];
 
   const SkillsData = [
-    { title: "API Integration", icon: <MdIntegrationInstructions /> },
-    { title: "Back-end & Database Skills", icon: <FaDatabase /> },
-    { title: "Github", icon: <FaGithub /> },
-    { title: "Git Version Control", icon: <FaGitAlt /> },
-    { title: "Java", icon: <FaJava /> },
-    { title: "JavaScript Expertise", icon: <FaJs /> },
-    { title: "Problem Solving", icon: <AiOutlineBulb /> },
-    { title: "React.js Proficiency", icon: <FaReact /> },
-    { title: "Responsive Design", icon: <FaMobileAlt /> },
-    { title: "State Management", icon: <FaCode /> },
+    { icon: <MdIntegrationInstructions /> },
+    {icon: <FaDatabase /> },
+    {icon: <FaGithub /> },
+    { icon: <FaGitAlt /> },
+    { icon: <FaJava /> },
+    {  icon: <FaJs /> },
+    {  icon: <AiOutlineBulb /> },
+    { icon: <FaReact /> },
+    {  icon: <FaMobileAlt /> },
+    { icon: <FaCode /> },
   ];
 
 
@@ -64,29 +65,41 @@ const About = () => {
 
           {/* About Section */}
           <div
-              className="flex flex-col items-center text-center sm:flex-row sm:justify-between px-6 md:px-16 lg:px-24 space-y-8 sm:space-y-0">
-              <img src="/portfolio_img.webp" alt="hero" className="w-44 h-44 md:w-72 md:h-72 sm:mr-6"/>
+              className="relative min-h-screen flex items-center justify-center"
+              style={{
+                  backgroundImage: `url("../../public/portfolio_img.jpg")`,
+                  backgroundRepeat: "no-repeat",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+              }}
+          >
+              {/* Dark Overlay */}
+              <div className="absolute inset-0 bg-black opacity-60"></div>
 
-              <div className="px-6 md:px-16">
-                  <h3 className="text-xs md:text-sm font-semibold uppercase tracking-wider">ABOUT :</h3>
-                  <h1 className="text-lg md:text-2xl lg:text-3xl leading-tight font-semibold mt-3 md:mt-4">
-                      I'm a web engineer passionate about building scalable, user-friendly applications with modern
-                      technologies.
+              {/* Centered Text */}
+              <div className="relative z-10 text-white text-start px-6 max-w-3xl">
+                  <h3 className="text-xl font-serif uppercase tracking-wider">
+                      ABOUT Jhaneswar
+                  </h3>
+                  <h1 className="font-serif text-4xl sm:text-5xl leading-normal mt-3 md:mt-4">
+                      I'm a web engineer passionate about building scalable, user-friendly
+                      applications with modern technologies.
                   </h1>
               </div>
           </div>
+
 
           {/* Get to Know Me Section */}
           <div className="min-h-screen flex flex-col justify-center lg:mt-20">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-mono text-center mb-10 md:mb-12">GET TO KNOW ME</h1>
               <div className="flex items-center justify-center ">
                   <div
-                      className=" max-w-xs sm:max-w-xl md:max-w-2xl lg:max-w-3xl space-y-8 text-sm sm:text-xl lg:text-2xl leading-loose text-start px-2.5">
-                      <p>I'm a people-person, meaning I focus on connection and actually prefer working in group
-                          settings (shocker).</p>
+                      className=" mx-auto max-w-2xl space-y-8 text-sm sm:text-xl lg:text-2xl leading-loose text-start px-12 lg:px-0">
+                      <p>I'm a Introvert-person, meaning I focus on connection and actually prefer working in my
+                          settings .</p>
                       <p>You'd never know the mental friction, the internal buzz, when a problem locks me in, because
                           the chase for the solution takes over.</p>
-                      <p>When not in the office, you can usually find me in the gym, watching movies, or solving
+                      <p>When not in the office, you can usually find me in the gym, watching vlogs, or solving
                           LeetCode problems.</p>
                   </div>
               </div>
@@ -94,42 +107,63 @@ const About = () => {
           </div>
 
           {/* Experience Section */}
-          <div className="h-auto flex flex-col justify-center lg:mt-6">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-mono text-center mb-10 md:mb-12">Experience</h1>
-              <div className="flex items-center justify-center">
-                  <div
-                      className=" max-w-xs sm:max-w-xl md:max-w-2xl lg:max-w-3xl space-y-8 text-sm sm:text-xl lg:text-2xl leading-loose text-start px-2.5">
-                      {ExperienceData.map((item, index) => (
-                          <div key={index}
-                               className=" text-start mb-6 md:mb-8 leading-loose text-sm sm:text-xl lg:text-2xl">
-                              <h1 className="font-sans text-lg lg:text-xl mb-2 text-gray-300">{item.title}</h1>
-                              <p>{item.role1}</p>
-                              <p>{item.role2}</p>
-                          </div>
-                      ))}
-                  </div>
-              </div>
-          </div>
+            <div className="h-auto flex flex-col justify-center lg:mt-6">
+                {/* Experience Title */}
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-semibold text-center mb-8 md:mb-10 uppercase">
+                    Experience
+                </h1>
 
-          {/* Skills Section */}
-          <div className=" min-h-screen mt-14 sm:mt-16 md:mt-20">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-mono text-center mb-10 md:mb-12">Skills</h1>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-center px-2.5">
-                  {SkillsData.map((skill, index) => (
-                      <div key={index} className="flex flex-col items-center space-y-2 p-4">
-                          <div className="text-4xl text-blue-400">{skill.icon}</div>
-                          <p className="text-sm sm:text-lg lg:text-xl font-semibold">{skill.title}</p>
-                      </div>
-                  ))}
-              </div>
-          </div>
+            {/* Experience List */}
+            <div className="flex items-center justify-center">
+                <div className="max-w-xs sm:max-w-xl md:max-w-2xl lg:max-w-3xl space-y-6 text-start px-2.5">
+                    {ExperienceData.map((item, index) => (
+                        <div key={index} className="mb-6 md:mb-8">
+                            {/* Company Name */}
+                            <h1 className="text-xl sm:text-2xl font-semibold text-slate-300 mb-4">{item.title}</h1>
+
+                            {/* Job Roles */}
+                            <p className="text-white text-base sm:text-lg mb-1">{item.role1}</p>
+                            <p className="text-white text-base sm:text-lg">{item.role2}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+            </div>
+
+            {/* Skills Section */}
+            <div className="w-full mt-14 sm:mt-16 md:mt-20 lg:mt-24 xl:mt-32">
+                {/* Skills Title */}
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-semibold text-center mb-10 md:mb-12 uppercase">
+                    Skills
+                </h1>
+
+                {/* Skills Grid */}
+                <motion.div
+                    className="grid grid-cols-4 sm:grid-cols-5 gap-2 max-w-3xl mx-auto"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                >
+                    {SkillsData.map((skill, index) => (
+                        <motion.div
+                            key={index}
+                            className="flex flex-col items-center space-y-3 py-4 rounded-xl transition-all duration-300 hover:scale-105"
+                            whileHover={{ scale: 1.05 }}
+                        >
+                            {/* Skill Icon */}
+                            <div className="text-3xl">{skill.icon}</div>
+                        </motion.div>
+                    ))}
+                </motion.div>
+            </div>
+
 
           {/* Contact Section */}
-          <div className="px-6 md:px-16 lg:px-40 mt-14 sm:mt-16 ">
+          <div className="w-full mt-14 sm:mt-16 md:mt-20 lg:mt-24 xl:mt-32">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-mono text-center mb-10 md:mb-12">Call Me, Beep
                   Me</h1>
               {callData.map((item, index) => (
-                  <div key={index} className="px-8 md:px-24 lg:px-28 mb-4 md:mb-6">
+                  <div key={index} className="max-w-2xl mx-auto mb-4 md:mb-6 px-12 lg:px-0">
                       <h1 className="font-sans text-lg lg:text-xl mb-2 text-gray-300">{item.title}</h1>
                       <p className="text-start mb-8 md:mb-10 leading-loose text-sm sm:text-xl lg:text-2xl">
                           {item.content === 'manijhaneswar@gmail.com'
