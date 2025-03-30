@@ -1,5 +1,4 @@
 import { FaArrowRight } from "react-icons/fa";
-import { Link } from "react-router-dom";
 const ProjectCard = () => {
 
     const projectsData = [
@@ -7,21 +6,21 @@ const ProjectCard = () => {
             id: "01",
             title: "RDC Website",
             description: "This is a sample RDC website project.",
-            Link: "manijhaneswar/#/rdc",
+            Link: "https://manijhaneswar1.github.io/manijhaneswar/#/rdc",
             image: "project_images/RDC_bg.webp",
         },
         {
             id: "02",
             title: "Resource Booking",
             description: "This is Resource Booking",
-            Link: "manijhaneswar/#/mnrdc",
+            Link: "https://manijhaneswar1.github.io/manijhaneswar/#/mnrdc",
             image: "project_images/resbook_bg.webp",
         },
         {
             id: "03",
             title: "Car Pooling App",
             description: "This is a car pooling web application.",
-            Link: "manijhaneswar/#/car-pooling",
+            Link: "https://manijhaneswar1.github.io/manijhaneswar/#/car-pooling",
             image: "project_images/car_pooling_bg.webp",
         },
 
