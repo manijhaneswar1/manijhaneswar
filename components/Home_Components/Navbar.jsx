@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
     const link_data = ["rdc", "mnrdc", "car-pooling"];
@@ -18,7 +17,7 @@ const Navbar = () => {
             {/* Logo Section (Left) */}
             <div className="flex items-center">
                 <Link to="/" className="flex items-center gap-3">
-                    <img alt="Logo" src="/portfolio_icon-removebg-preview.webp" className="w-10 h-10" />
+                    <img alt="Logo" src="portfolio_icon-removebg-preview.webp" className="w-10 h-10" />
                     <h1 className="text-xl font-semibold tracking-wide"><span className="hidden md:inline">Mani</span> Jhaneswar
                     </h1>
                 </Link>

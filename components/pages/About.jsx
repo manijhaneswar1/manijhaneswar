@@ -47,7 +47,7 @@ const About = () => {
           <div className="relative flex items-center justify-center">
               {/* Pencil Sketch Image */}
               <img
-                  src="../../public/pencil_design.webp"
+                  src="/pencil_design.webp"
                   alt="pencil"
                   className="w-72 h-72"
               />
@@ -67,7 +67,7 @@ const About = () => {
           <div
               className="relative min-h-screen flex items-center justify-center"
               style={{
-                  backgroundImage: `url("../../public/portfolio_img.jpg")`,
+                  backgroundImage: `url("/portfolio_img.jpg")`, // Remove "public" from path
                   backgroundRepeat: "no-repeat",
                   backgroundSize: "cover",
                   backgroundPosition: "center",
