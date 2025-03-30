@@ -9,7 +9,7 @@ const carPooling = ()=>{
           "myRole": "I worked as the Frontend Engineer for this four-month-long project as part of my End Semester Project."
         },
         {
-            image : "../../../public/project_images/car_mock.webp",
+            image : "project_images/car_mock.webp",
             website : "/",
         },
     ]

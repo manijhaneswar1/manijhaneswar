@@ -108,7 +108,7 @@ const Project = (props) => {
             {props.website && (
                 <div
                     className="font-mono text-white flex items-center justify-center">
-                    <img src="../../public/pencil_design.webp" className="w-[16rem] h-[14rem] relative top-4 right-2.5"/>
+                    <img src="pencil_design.webp" className="w-[16rem] h-[14rem] relative top-4 right-2.5"/>
                     <a href={props.website}
                        target="_blank"
                        className="text-white absolute flex items-center gap-2.5">

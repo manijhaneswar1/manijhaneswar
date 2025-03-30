@@ -8,7 +8,7 @@ const RDC = ()=>{
             permission : "To protect View's intellectual property, I have omitted any confidential information. All resources in this case study are my own, have been made public, and/or do not necessarily reflect the values of RND Cell, Parul University"
         },
         {
-            image: "../../../public/project_images/rdc_mock.webp",
+            image: "project_images/rdc_mock.webp",
             website : "/",
         },
     ]
