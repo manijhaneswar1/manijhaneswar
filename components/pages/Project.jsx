@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 const Project = (props) => {
     const [scroll, setScroll] = useState(0);
-    const [opacityDivider, setOpacityDivider] = useState(700);
+    const [opacityDivider, setOpacityDivider] = useState(450);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -11,9 +11,9 @@ const Project = (props) => {
         };
         const updateOpacityDivider = () => {
           if (window.innerWidth >= 1024) {
-            setOpacityDivider(350); // Large screens
+            setOpacityDivider(650); // Large screens
           } else if (window.innerWidth >= 768) {
-            setOpacityDivider(400); // Medium screens
+            setOpacityDivider(650); // Medium screens
           } else {
             setOpacityDivider(650); // Small screens
           }
@@ -108,7 +108,7 @@ const Project = (props) => {
             {props.website && (
                 <div
                     className="font-mono text-white flex items-center justify-center">
-                    <img src="../../public/pencil_design.jpg" className="w-[16rem] h-[14rem] relative top-4 right-2.5"/>
+                    <img src="../../public/pencil_design.webp" className="w-[16rem] h-[14rem] relative top-4 right-2.5"/>
                     <a href={props.website}
                        target="_blank"
                        className="text-white absolute flex items-center gap-2.5">
@@ -117,6 +117,7 @@ const Project = (props) => {
                     </a>
                 </div>
             )}
+
         </div>
     );
 };

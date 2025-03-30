@@ -19,7 +19,7 @@ const Footer = () => {
                     <Link to="/" className="flex items-center gap-3">
                         <img
                             alt="Logo"
-                            src="/portfolio_icon-removebg-preview.png"
+                            src="/portfolio_icon-removebg-preview.webp"
                             className="w-10 h-10 md:w-12 md:h-12"
                         />
                         <h1 className="text-white tracking-wider text-xl md:text-2xl font-mono">

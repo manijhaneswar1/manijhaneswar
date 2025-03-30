@@ -18,14 +18,14 @@ const Navbar = () => {
             {/* Logo Section (Left) */}
             <div className="flex items-center">
                 <Link to="/" className="flex items-center gap-3">
-                    <img alt="Logo" src="/portfolio_icon-removebg-preview.png" className="w-10 h-10" />
+                    <img alt="Logo" src="/portfolio_icon-removebg-preview.webp" className="w-10 h-10" />
                     <h1 className="text-xl font-semibold tracking-wide"><span className="hidden md:inline">Mani</span> Jhaneswar
                     </h1>
                 </Link>
             </div>
 
             {/* Navigation Links (Right) */}
-            <div className="flex items-center justify-center gap-5 font-medium text-lg">
+            <div className="flex items-center justify-center gap-5 md:gap-8 font-medium text-lg">
                 <Link to="/" className="hover:border-t-2 border-white">Home</Link>
                 <Link to="/about" className="hover:border-t-2 border-white">About</Link>
                 <Link to={`/${projectLink}`} className="hover:border-t-2 border-white" onClick={handleProjectClick}>
