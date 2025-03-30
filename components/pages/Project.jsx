@@ -105,7 +105,7 @@ const Project = (props) => {
                   </a>
             )}
 
-            {props.website && (
+            {props.website && props.website.length > 0 && (
                 <div
                     className="font-mono text-white flex items-center justify-center">
                     <img src="pencil_design.webp" className="w-[16rem] h-[14rem] relative top-4 right-2.5"/>

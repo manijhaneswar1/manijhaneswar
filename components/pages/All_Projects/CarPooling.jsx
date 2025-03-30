@@ -10,7 +10,7 @@ const carPooling = ()=>{
         },
         {
             image : "project_images/car_mock.webp",
-            website : "/",
+            website : "",
         },
     ]
     return(

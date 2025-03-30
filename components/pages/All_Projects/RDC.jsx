@@ -9,7 +9,7 @@ const RDC = ()=>{
         },
         {
             image: "project_images/rdc_mock.webp",
-            website : "/",
+            website : "",
         },
     ]
     return(
