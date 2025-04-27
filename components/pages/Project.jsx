@@ -47,7 +47,7 @@ const Project = (props) => {
             <div className="relative w-full h-auto px-8 md:px-20 lg:px-24 text-white text-start pt-28 md:pt-32 pb-30">
 
                 <div>
-                    <a href='#/' className="flex gap-2 items-center">
+                    <a href='' className="flex gap-2 items-center">
                         <FaArrowLeft /> Back to Projects
                     </a>
                 </div>
