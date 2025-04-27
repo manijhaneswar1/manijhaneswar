@@ -1,5 +1,6 @@
 import {FaArrowLeft, FaArrowRight, FaCircle} from "react-icons/fa";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Project = (props) => {
     const [scroll, setScroll] = useState(0);
@@ -47,9 +48,9 @@ const Project = (props) => {
             <div className="relative w-full h-auto px-8 md:px-20 lg:px-24 text-white text-start pt-28 md:pt-32 pb-30">
 
                 <div>
-                    <a href='' className="flex gap-2 items-center">
+                    <Link to='/' className="flex gap-2 items-center">
                         <FaArrowLeft /> Back to Projects
-                    </a>
+                    </Link>
                 </div>
 
                 <div className="pt-12">
