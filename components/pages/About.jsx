@@ -54,7 +54,7 @@ const About = () => {
 
               {/* Resume Button Inside Image */}
               <a
-                  href="https://drive.google.com/file/d/1vZHh86rgv2VGu9dmX305K5axHBumIklF/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1LhjBmqK83l9g0SBwxjdAz67_Hj9xWznC/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="absolute top-25"
