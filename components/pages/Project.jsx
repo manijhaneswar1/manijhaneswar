@@ -47,7 +47,7 @@ const Project = (props) => {
             {/* Header Section */}
             <div className="relative w-full h-auto px-8 md:px-20 lg:px-24 text-white text-start pt-28 md:pt-32 pb-30">
 
-                <div className="pt-12">
+                <div>
                     <h1 className="text-4xl md:text-5xl lg:text-7xl font-mono">{props.title}</h1>
                     <p className="text-sm md:text-lg lg:text-xl font-sans pt-6 leading-relaxed">{props.description}</p>
                     {props.description2 && (
