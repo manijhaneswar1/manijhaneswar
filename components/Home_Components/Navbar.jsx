@@ -1,13 +1,15 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
-import { Menu, X, ExternalLink, Github, Linkedin, Mail } from "lucide-react";
+import { Menu, X, Github, Linkedin, Mail } from "lucide-react";
 
 const Navbar = () => {
     const [projectLink, setProjectLink] = useState("rdc");
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
     const location = useLocation();
     const navbarRef = useRef(null);
+    const mobileMenuRef = useRef(null);
 
     const link_data = ["rdc", "mnrdc", "car-pooling", "dden"];
 
@@ -17,7 +19,12 @@ const Navbar = () => {
         };
 
         const handleClickOutside = (e) => {
-            if (navbarRef.current && !navbarRef.current.contains(e.target)) {
+            if (
+                navbarRef.current &&
+                !navbarRef.current.contains(e.target) &&
+                mobileMenuRef.current &&
+                !mobileMenuRef.current.contains(e.target)
+            ) {
                 setIsMobileMenuOpen(false);
             }
         };
@@ -46,9 +53,7 @@ const Navbar = () => {
             <div
                 ref={navbarRef}
                 className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-                    isScrolled
-                        ? "py-3 bg-black/20"
-                        : "py-6 bg-transparent"
+                    isScrolled ? "py-3 bg-black/30" : "py-6 bg-transparent"
                 }`}
             >
                 <div className="px-6 md:px-12 lg:px-24 mx-auto">
@@ -91,14 +96,24 @@ const Navbar = () => {
                             </Link>
                         </div>
 
-                        {/* Social Icons */}
+                        {/* Desktop Social */}
                         <div className="hidden md:flex items-center gap-4 text-white">
-                            <a href="https://github.com/manijhaneswar1" target="_blank">
+                            <a
+                                href="https://github.com/manijhaneswar1"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 <Github size={20} />
                             </a>
-                            <a href="https://linkedin.com/in/manijhaneswar" target="_blank">
+
+                            <a
+                                href="https://linkedin.com/in/manijhaneswar"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 <Linkedin size={20} />
                             </a>
+
                             <a href="mailto:manijhaneswar@gmail.com">
                                 <Mail size={20} />
                             </a>
@@ -107,9 +122,9 @@ const Navbar = () => {
                         {/* Mobile Button */}
                         <button
                             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                            className="md:hidden text-white"
+                            className="md:hidden text-white z-50"
                         >
-                            {isMobileMenuOpen ? <X /> : <Menu />}
+                            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
                         </button>
                     </div>
                 </div>
@@ -117,13 +132,23 @@ const Navbar = () => {
 
             {/* Mobile Menu */}
             {isMobileMenuOpen && (
-                <div className="fixed inset-0 bg-black z-40 pt-24 px-8 text-white md:hidden">
+                <div
+                    ref={mobileMenuRef}
+                    className="fixed inset-0 bg-black z-40 pt-24 px-8 text-white md:hidden"
+                >
                     <div className="flex flex-col gap-6 text-xl">
-                        <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>
+
+                        <Link
+                            to="/"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                        >
                             Home
                         </Link>
 
-                        <Link to="/about" onClick={() => setIsMobileMenuOpen(false)}>
+                        <Link
+                            to="/about"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                        >
                             About
                         </Link>
 
@@ -136,6 +161,29 @@ const Navbar = () => {
                         >
                             Random Project
                         </Link>
+                    </div>
+
+                    {/* Mobile Social */}
+                    <div className="absolute bottom-10 left-0 right-0 flex justify-center gap-6">
+                        <a
+                            href="https://github.com/manijhaneswar1"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <Github size={24} />
+                        </a>
+
+                        <a
+                            href="https://linkedin.com/in/manijhaneswar"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <Linkedin size={24} />
+                        </a>
+
+                        <a href="mailto:manijhaneswar@gmail.com">
+                            <Mail size={24} />
+                        </a>
                     </div>
                 </div>
             )}
