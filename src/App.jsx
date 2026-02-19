@@ -8,6 +8,7 @@ import About from "../components/pages/About.jsx";
 import RDC from "../components/pages/All_Projects/RDC.jsx";
 import MNRDC from "../components/pages/All_Projects/MNRDC.jsx";
 import CarPooling from "../components/pages/All_Projects/CarPooling.jsx";
+import Dden from "../components/pages/All_Projects/Dden.jsx";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/rdc" element={<RDC />} />
           <Route path="/mnrdc" element={<MNRDC />} />
           <Route path="/car-pooling" element={<CarPooling />} />
+          <Route path="/dden" element={<Dden />} />
         </Route>
       </Routes>
     </Router>

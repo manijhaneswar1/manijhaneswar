@@ -1,38 +1,145 @@
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { useState, useEffect, useRef } from "react";
+import { Menu, X, ExternalLink, Github, Linkedin, Mail } from "lucide-react";
 
 const Navbar = () => {
-    const link_data = ["rdc", "mnrdc", "car-pooling"];
-    const [projectLink, setProjectLink] = useState(link_data[0]);
+    const [projectLink, setProjectLink] = useState("rdc");
+    const [isScrolled, setIsScrolled] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const location = useLocation();
+    const navbarRef = useRef(null);
+
+    const link_data = ["rdc", "mnrdc", "car-pooling", "dden"];
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 20);
+        };
+
+        const handleClickOutside = (e) => {
+            if (navbarRef.current && !navbarRef.current.contains(e.target)) {
+                setIsMobileMenuOpen(false);
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        document.addEventListener("mousedown", handleClickOutside);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
 
     const handleProjectClick = () => {
         const randomIndex = Math.floor(Math.random() * link_data.length);
         setProjectLink(link_data[randomIndex]);
     };
 
+    const isActive = (path) => {
+        return location.pathname === path;
+    };
+
     return (
-        <nav className="w-full bg-black text-white bg-opacity-90 backdrop-blur-md shadow-md py-6 lg:py-12 px-10 md:px-20 lg:px-24
-                        md:flex md:items-center md:justify-between space-y-5">
+        <>
+            {/* Navbar */}
+            <div
+                ref={navbarRef}
+                className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+                    isScrolled
+                        ? "py-3 bg-black/20"
+                        : "py-6 bg-transparent"
+                }`}
+            >
+                <div className="px-6 md:px-12 lg:px-24 mx-auto">
+                    <div className="flex items-center justify-between">
 
-            {/* Logo Section (Left) */}
-            <div className="flex items-center">
-                <Link to="/" className="flex items-center gap-3">
-                    <img alt="Logo" src="portfolio_icon-removebg-preview.webp" className="w-10 h-10" />
-                    <h1 className="text-xl font-semibold tracking-wide"><span className="hidden md:inline">Mani</span> Jhaneswar
-                    </h1>
-                </Link>
+                        {/* Logo */}
+                        <Link to="/" className="flex items-center gap-3">
+                            <img
+                                alt="Logo"
+                                src="portfolio_icon-removebg-preview.webp"
+                                className="w-10 h-10 md:w-12 md:h-12"
+                            />
+                            <h1 className="text-white font-bold text-xl md:text-2xl">
+                                <span className="hidden md:inline">Mani </span>
+                                Jhaneswar
+                            </h1>
+                        </Link>
+
+                        {/* Desktop Links */}
+                        <div className="hidden md:flex items-center gap-8 text-white">
+                            <Link
+                                to="/"
+                                className={isActive("/") ? "font-bold" : ""}
+                            >
+                                Home
+                            </Link>
+
+                            <Link
+                                to="/about"
+                                className={isActive("/about") ? "font-bold" : ""}
+                            >
+                                About
+                            </Link>
+
+                            <Link
+                                to={`/${projectLink}`}
+                                onClick={handleProjectClick}
+                            >
+                                Random Project
+                            </Link>
+                        </div>
+
+                        {/* Social Icons */}
+                        <div className="hidden md:flex items-center gap-4 text-white">
+                            <a href="https://github.com/manijhaneswar1" target="_blank">
+                                <Github size={20} />
+                            </a>
+                            <a href="https://linkedin.com/in/manijhaneswar" target="_blank">
+                                <Linkedin size={20} />
+                            </a>
+                            <a href="mailto:manijhaneswar@gmail.com">
+                                <Mail size={20} />
+                            </a>
+                        </div>
+
+                        {/* Mobile Button */}
+                        <button
+                            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                            className="md:hidden text-white"
+                        >
+                            {isMobileMenuOpen ? <X /> : <Menu />}
+                        </button>
+                    </div>
+                </div>
             </div>
 
-            {/* Navigation Links (Right) */}
-            <div className="flex items-center justify-center gap-5 md:gap-8 font-medium text-lg">
-                <Link to="/" className="hover:border-t-2 border-white">Home</Link>
-                <Link to="/about" className="hover:border-t-2 border-white">About</Link>
-                <Link to={`/${projectLink}`} className="hover:border-t-2 border-white" onClick={handleProjectClick}>
-                    Random Project
-                </Link>
-            </div>
+            {/* Mobile Menu */}
+            {isMobileMenuOpen && (
+                <div className="fixed inset-0 bg-black z-40 pt-24 px-8 text-white md:hidden">
+                    <div className="flex flex-col gap-6 text-xl">
+                        <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>
+                            Home
+                        </Link>
 
-        </nav>
+                        <Link to="/about" onClick={() => setIsMobileMenuOpen(false)}>
+                            About
+                        </Link>
+
+                        <Link
+                            to={`/${projectLink}`}
+                            onClick={() => {
+                                handleProjectClick();
+                                setIsMobileMenuOpen(false);
+                            }}
+                        >
+                            Random Project
+                        </Link>
+                    </div>
+                </div>
+            )}
+        </>
     );
 };
 

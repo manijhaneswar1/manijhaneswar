@@ -41,7 +41,7 @@ const About = () => {
   ];
 
   return (
-      <div className="w-full min-h-screen bg-black text-white">
+      <div className="w-full min-h-screen mt-16 md:mt-28 bg-black text-white">
 
           {/* Pencil Sketch with Resume Inside */}
           <div className="relative flex items-center justify-center">
