@@ -98,7 +98,7 @@ function ProfileCard() {
 
                     {/* DESC */}
                     <p className="mt-4 text-sm sm:text-base md:text-lg text-white/80">
-                        I'm a Web Engineer, and it's lovely to meet you.
+                        Money Music WebDev
                     </p>
 
                     {/* WORK */}

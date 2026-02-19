@@ -64,12 +64,8 @@ const Navbar = () => {
                             <img
                                 alt="Logo"
                                 src="portfolio_icon-removebg-preview.webp"
-                                className="w-10 h-10 md:w-12 md:h-12"
+                                className="w-12 h-12 md:w-16 md:h-16"
                             />
-                            <h1 className="text-white font-bold text-xl md:text-2xl">
-                                <span className="hidden md:inline">Mani </span>
-                                Jhaneswar
-                            </h1>
                         </Link>
 
                         {/* Desktop Links */}

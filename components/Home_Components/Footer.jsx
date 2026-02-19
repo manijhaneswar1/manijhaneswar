@@ -18,12 +18,12 @@ const Footer = () => {
             <div
                 className="absolute inset-0 bg-cover bg-center"
                 style={{
-                    backgroundImage: `url(project_images/footer-bg-2.jpg)`
+                    backgroundImage: `url(project_images/footer-bg.jpg)`
                 }}
             />
 
             {/* Dark Overlay */}
-            <div className="absolute inset-0 bg-black/70" />
+            <div className="absolute inset-0 bg-black/25" />
 
             {/* Content */}
             <div className="relative z-10 space-y-8">
