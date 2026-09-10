@@ -140,7 +140,7 @@ function ProfileCard() {
                     <div className="mt-10 grid grid-cols-3 gap-6 max-w-sm">
                         <div>
                             <div className="text-lg md:text-2xl font-bold">
-                                15+
+                                18+
                             </div>
                             <div className="text-xs md:text-sm text-white/60 uppercase">
                                 Projects
@@ -149,7 +149,7 @@ function ProfileCard() {
 
                         <div>
                             <div className="text-lg md:text-2xl font-bold">
-                                2 yrs
+                                3 yrs
                             </div>
                             <div className="text-xs md:text-sm text-white/60 uppercase">
                                 Experience
@@ -158,7 +158,7 @@ function ProfileCard() {
 
                         <div>
                             <div className="text-lg md:text-2xl font-bold">
-                                6+
+                                9+
                             </div>
                             <div className="text-xs md:text-sm text-white/60 uppercase">
                                 Clients

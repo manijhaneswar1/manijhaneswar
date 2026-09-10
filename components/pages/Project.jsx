@@ -1,4 +1,4 @@
-import {FaArrowLeft, FaArrowRight, FaCircle} from "react-icons/fa";
+import {FaArrowLeft, FaCircle} from "react-icons/fa";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 

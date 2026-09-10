@@ -11,7 +11,17 @@ const Navbar = () => {
     const navbarRef = useRef(null);
     const mobileMenuRef = useRef(null);
 
-    const link_data = ["rdc", "mnrdc", "car-pooling", "dden"];
+    // All portfolio projects
+    const link_data = [
+        "rdc",
+        "mnrdc",
+        "car-pooling",
+        "dden",
+        "plaam",
+        "siri-bangles",
+        "lavvi",
+        "workmitra",
+    ];
 
     useEffect(() => {
         const handleScroll = () => {
@@ -53,7 +63,9 @@ const Navbar = () => {
             <div
                 ref={navbarRef}
                 className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-                    isScrolled ? "py-3 bg-black/30" : "py-6 bg-transparent"
+                    isScrolled
+                        ? "py-3 bg-black/30"
+                        : "py-6 bg-transparent"
                 }`}
             >
                 <div className="px-6 md:px-12 lg:px-24 mx-auto">
@@ -117,10 +129,16 @@ const Navbar = () => {
 
                         {/* Mobile Button */}
                         <button
-                            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                            onClick={() =>
+                                setIsMobileMenuOpen(!isMobileMenuOpen)
+                            }
                             className="md:hidden text-white z-50"
                         >
-                            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+                            {isMobileMenuOpen ? (
+                                <X size={28} />
+                            ) : (
+                                <Menu size={28} />
+                            )}
                         </button>
                     </div>
                 </div>
